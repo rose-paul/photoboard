@@ -1,5 +1,13 @@
 import * as React from "react";
+import PhotoCard from "./PhotoCard";
+export const PhotoBoard = (props: { photoList: Array<string> }) => {
 
-export interface HelloProps { compiler: string; framework: string; }
+ return (
+     props.photoList.map( image => {
+        const metadata = {path: image, description: "none"}
+        return <PhotoCard metadata={metadata} />
+     })
+ )
+};
 
-export const PhotoBoard = (props: HelloProps) => <h1>Hello from {props.compiler} and {props.framework}! Still work?</h1>;
+export default PhotoBoard;

@@ -98,12 +98,38 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhotoBoard = void 0;
 const React = __webpack_require__(/*! react */ "react");
-exports.PhotoBoard = (props) => React.createElement("h1", null,
-    "Hello from ",
-    props.compiler,
-    " and ",
-    props.framework,
-    "! Still work?");
+const PhotoCard_1 = __webpack_require__(/*! ./PhotoCard */ "./src/components/PhotoCard.tsx");
+exports.PhotoBoard = (props) => {
+    return (props.photoList.map(image => {
+        const metadata = { path: image, description: "none" };
+        return React.createElement(PhotoCard_1.default, { metadata: metadata });
+    }));
+};
+exports.default = exports.PhotoBoard;
+
+
+/***/ }),
+
+/***/ "./src/components/PhotoCard.tsx":
+/*!**************************************!*\
+  !*** ./src/components/PhotoCard.tsx ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "react");
+const PhotoCard = (props) => {
+    const [faceUp, flip] = React.useState(true);
+    console.log(props.metadata);
+    return (React.createElement(React.Fragment, null,
+        !faceUp && React.createElement(React.Fragment, null,
+            React.createElement("div", null, props.metadata.description)),
+        React.createElement("img", { src: props.metadata.path, alt: props.metadata.description, style: { maxWidth: 500 + "px" } })));
+};
+exports.default = PhotoCard;
 
 
 /***/ }),
@@ -121,7 +147,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 const ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
 const PhotoBoard_1 = __webpack_require__(/*! ./components/PhotoBoard */ "./src/components/PhotoBoard.tsx");
-ReactDOM.render(React.createElement(PhotoBoard_1.PhotoBoard, { compiler: "TypeScript", framework: "React" }), document.getElementById("root"));
+document.addEventListener('DOMContentLoaded', () => {
+    const photoList = [
+        "../photos/BumperCars.svg",
+        "../photos/Chernobyl_Lenin.svg",
+        "../photos/ChernobylRadar.svg",
+        "../photos/ChildrenWard.svg",
+        "../photos/Hospital_Gynecology.svg",
+        "../photos/Kiryak_Hide_cropped.svg",
+        "../photos/Memorial911.svg",
+        "../photos/Milkovo_BusStop.svg",
+        "../photos/ParentsCorner.svg",
+        "../photos/Reindeer1_Tongue.svg",
+        "../photos/Riverdale_Subway.svg",
+        "../photos/Smoking.svg",
+        "../photos/SportComplex_Court.svg",
+        "../photos/SportComplex2.svg",
+        "../photos/SugarLoaf_TennisCourt.svg"
+    ];
+    ReactDOM.render(React.createElement(PhotoBoard_1.PhotoBoard, { photoList: photoList }), document.getElementById("root"));
+});
 
 
 /***/ }),
