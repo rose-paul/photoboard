@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     "../photos/Smoking.svg",
     "../photos/SportComplex_Court.svg",
     "../photos/SportComplex2.svg",
-    "../photos/SugarLoaf_TennisCourt.svg"]
+    "../photos/SugarLoaf_TennisCourt.svg",
+    "../photos/BrooklynBrown.jpg"
+]
     ReactDOM.render(<PhotoBoard photoList={photoList} />,
     document.getElementById("root"))
 })

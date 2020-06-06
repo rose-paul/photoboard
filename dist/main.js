@@ -99,17 +99,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhotoBoard = void 0;
 const React = __webpack_require__(/*! react */ "react");
 const PhotoCard_1 = __webpack_require__(/*! ./PhotoCard */ "./src/components/PhotoCard.tsx");
-var boardStyle = {
-    display: "flex",
-    flexWrap: "wrap",
-    height: "inherit",
-    width: 90 + "%",
-    border: "1px solid red",
-    backgroundColor: "purple"
-};
+// var boardStyle = {
+//     display: "flex",
+//     flexWrap: "wrap",
+//     height: "inherit",
+//     width: 90 + "%",
+//     border: "1px solid red",
+//     backgroundColor: "purple"
+// }
 exports.PhotoBoard = (props) => {
     return (React.createElement("div", { className: "wrapper" },
-        React.createElement("div", { style: boardStyle }, props.photoList.map(image => {
+        React.createElement("div", { className: "board" }, props.photoList.map(image => {
             const metadata = { path: image, description: "none" };
             return React.createElement(PhotoCard_1.default, { metadata: metadata });
         }))));
@@ -130,17 +130,19 @@ exports.default = exports.PhotoBoard;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
-var photoStyle = {
-    maxWidth: 500 + "px",
-    objectFit: "fill",
-};
+// var photoStyle = {
+//     maxWidth: 500 + "px",
+//     objectFit: "fill",
+// }
 const PhotoCard = (props) => {
     const [faceUp, flip] = React.useState(true);
     console.log(props.metadata);
     return (React.createElement(React.Fragment, null,
         !faceUp && React.createElement(React.Fragment, null,
             React.createElement("div", null, props.metadata.description)),
-        React.createElement("img", { src: props.metadata.path, alt: props.metadata.description, style: photoStyle })));
+        React.createElement("img", { src: props.metadata.path, alt: props.metadata.description, 
+            // style={ photoStyle }
+            className: "photo" })));
 };
 exports.default = PhotoCard;
 
@@ -176,7 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "../photos/Smoking.svg",
         "../photos/SportComplex_Court.svg",
         "../photos/SportComplex2.svg",
-        "../photos/SugarLoaf_TennisCourt.svg"
+        "../photos/SugarLoaf_TennisCourt.svg",
+        "../photos/BrooklynBrown.jpg"
     ];
     ReactDOM.render(React.createElement(PhotoBoard_1.PhotoBoard, { photoList: photoList }), document.getElementById("root"));
 });
