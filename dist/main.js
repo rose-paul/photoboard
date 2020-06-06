@@ -135,14 +135,9 @@ const React = __webpack_require__(/*! react */ "react");
 //     objectFit: "fill",
 // }
 const PhotoCard = (props) => {
-    const [faceUp, flip] = React.useState(true);
-    console.log(props.metadata);
+    const [modal, flip] = React.useState(false);
     return (React.createElement(React.Fragment, null,
-        !faceUp && React.createElement(React.Fragment, null,
-            React.createElement("div", null, props.metadata.description)),
-        React.createElement("img", { src: props.metadata.path, alt: props.metadata.description, 
-            // style={ photoStyle }
-            className: "photo" })));
+        React.createElement("img", { src: props.metadata.path, alt: props.metadata.description, className: "photo" })));
 };
 exports.default = PhotoCard;
 
