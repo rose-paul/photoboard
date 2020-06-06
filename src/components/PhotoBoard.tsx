@@ -1,6 +1,6 @@
 import * as React from "react";
 import PhotoCard from "./PhotoCard";
-
+import Modal from "./Modal";
 // var boardStyle = {
 //     display: "flex",
 //     flexWrap: "wrap",
@@ -12,12 +12,23 @@ import PhotoCard from "./PhotoCard";
 
 export const PhotoBoard = (props: { photoList: Array<string> }) => {
 
+    const [modal, showModal] = React.useState(null);    
+
+    function updateModal(path: string, description: string) {
+        const data = {
+            path,
+            description
+        }
+        showModal(<Modal data={data} />)
+    }
+
  return (
      <div className="wrapper">
+         {modal}
         <div className="board">
          {
              props.photoList.map( image => {
-                const metadata = {path: image, description: "none"}
+                const metadata = {path: image, description: "none", showModal: updateModal}
                 return <PhotoCard metadata={metadata} />
              })
          }

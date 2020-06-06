@@ -7,9 +7,7 @@ interface metadata {path: string, description: string}
 //     objectFit: "fill",
 // }
 
-const PhotoCard = (props: {metadata: {path: string, description: string}} ) => {
-
-    const [modal, flip] = React.useState(false);
+const PhotoCard = (props: {metadata: {path: string, description: string, showModal: Function }} ) => {
 
     return (
         <>
@@ -17,6 +15,7 @@ const PhotoCard = (props: {metadata: {path: string, description: string}} ) => {
             src={props.metadata.path} 
             alt={props.metadata.description} 
             className="photo"
+            onClick={() => props.metadata.showModal(props.metadata.path, props.metadata.description)}
             />
         </> 
     )

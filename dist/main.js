@@ -86,6 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/components/Modal.tsx":
+/*!**********************************!*\
+  !*** ./src/components/Modal.tsx ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "react");
+const Modal = (props) => {
+    console.log(props);
+    return (React.createElement("div", { className: "modal" },
+        React.createElement("img", { src: props.data.path, alt: "" })));
+};
+exports.default = Modal;
+
+
+/***/ }),
+
 /***/ "./src/components/PhotoBoard.tsx":
 /*!***************************************!*\
   !*** ./src/components/PhotoBoard.tsx ***!
@@ -99,6 +120,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PhotoBoard = void 0;
 const React = __webpack_require__(/*! react */ "react");
 const PhotoCard_1 = __webpack_require__(/*! ./PhotoCard */ "./src/components/PhotoCard.tsx");
+const Modal_1 = __webpack_require__(/*! ./Modal */ "./src/components/Modal.tsx");
 // var boardStyle = {
 //     display: "flex",
 //     flexWrap: "wrap",
@@ -108,9 +130,18 @@ const PhotoCard_1 = __webpack_require__(/*! ./PhotoCard */ "./src/components/Pho
 //     backgroundColor: "purple"
 // }
 exports.PhotoBoard = (props) => {
+    const [modal, showModal] = React.useState(null);
+    function updateModal(path, description) {
+        const data = {
+            path,
+            description
+        };
+        showModal(React.createElement(Modal_1.default, { data: data }));
+    }
     return (React.createElement("div", { className: "wrapper" },
+        modal,
         React.createElement("div", { className: "board" }, props.photoList.map(image => {
-            const metadata = { path: image, description: "none" };
+            const metadata = { path: image, description: "none", showModal: updateModal };
             return React.createElement(PhotoCard_1.default, { metadata: metadata });
         }))));
 };
@@ -135,9 +166,8 @@ const React = __webpack_require__(/*! react */ "react");
 //     objectFit: "fill",
 // }
 const PhotoCard = (props) => {
-    const [modal, flip] = React.useState(false);
     return (React.createElement(React.Fragment, null,
-        React.createElement("img", { src: props.metadata.path, alt: props.metadata.description, className: "photo" })));
+        React.createElement("img", { src: props.metadata.path, alt: props.metadata.description, className: "photo", onClick: () => props.metadata.showModal(props.metadata.path, props.metadata.description) })));
 };
 exports.default = PhotoCard;
 
