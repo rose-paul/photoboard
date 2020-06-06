@@ -14,10 +14,15 @@ export const PhotoBoard = (props: { photoList: Array<string> }) => {
 
     const [modal, showModal] = React.useState(null);    
 
-    function updateModal(path: string, description: string) {
+    function updateModal(path: string | null, description: string | null) {
+        if (!path && !description) {
+            showModal(null);
+            return;
+        }
         const data = {
             path,
-            description
+            description,
+            updateModal
         }
         showModal(<Modal data={data} />)
     }

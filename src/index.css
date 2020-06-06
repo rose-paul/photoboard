@@ -23,6 +23,36 @@ img {
   height: auto;
 }
 
+.modal {
+    position: absolute;
+    background-color: rgb(71, 71, 71);
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    min-width: 50vw;
+    max-height: 98vh;
+    max-width: 90vw;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(104, 36, 36, 0.5);
+  z-index: 1;
+}
+
+p {
+    color: white;
+}
+
 @media (max-width: 1200px) {
   .board {
   -moz-column-count:    4;

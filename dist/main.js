@@ -98,9 +98,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 const Modal = (props) => {
-    console.log(props);
-    return (React.createElement("div", { className: "modal" },
-        React.createElement("img", { src: props.data.path, alt: "" })));
+    return (React.createElement("div", { className: "modal-background", onClick: () => props.data.updateModal(null, null) },
+        React.createElement("div", { className: "modal", onClick: e => e.stopPropagation() },
+            React.createElement("img", { src: props.data.path, style: { objectFit: 'contain' } }),
+            React.createElement("caption", null,
+                React.createElement("p", null, props.data.description)))));
 };
 exports.default = Modal;
 
@@ -132,9 +134,14 @@ const Modal_1 = __webpack_require__(/*! ./Modal */ "./src/components/Modal.tsx")
 exports.PhotoBoard = (props) => {
     const [modal, showModal] = React.useState(null);
     function updateModal(path, description) {
+        if (!path && !description) {
+            showModal(null);
+            return;
+        }
         const data = {
             path,
-            description
+            description,
+            updateModal
         };
         showModal(React.createElement(Modal_1.default, { data: data }));
     }
