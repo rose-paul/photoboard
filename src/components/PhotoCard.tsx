@@ -2,6 +2,11 @@ import * as React from "react";
 
 interface metadata {path: string, description: string}
 
+var photoStyle = {
+    maxWidth: 500 + "px",
+    objectFit: "fill",
+}
+
 const PhotoCard = (props: {metadata: {path: string, description: string}} ) => {
 
     const [faceUp, flip] = React.useState(true);
@@ -12,7 +17,7 @@ const PhotoCard = (props: {metadata: {path: string, description: string}} ) => {
             <img 
             src={props.metadata.path} 
             alt={props.metadata.description} 
-            style={{maxWidth: 500 + "px"}}
+            style={ photoStyle }
             />
         </>
     )
