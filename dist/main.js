@@ -86,24 +86,24 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/Hello.tsx":
-/*!**********************************!*\
-  !*** ./src/components/Hello.tsx ***!
-  \**********************************/
+/***/ "./src/components/PhotoBoard.tsx":
+/*!***************************************!*\
+  !*** ./src/components/PhotoBoard.tsx ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Hello = void 0;
+exports.PhotoBoard = void 0;
 const React = __webpack_require__(/*! react */ "react");
-exports.Hello = (props) => React.createElement("h1", null,
+exports.PhotoBoard = (props) => React.createElement("h1", null,
     "Hello from ",
     props.compiler,
     " and ",
     props.framework,
-    "!");
+    "! Still work?");
 
 
 /***/ }),
@@ -120,8 +120,8 @@ exports.Hello = (props) => React.createElement("h1", null,
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
 const ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
-const Hello_1 = __webpack_require__(/*! ./components/Hello */ "./src/components/Hello.tsx");
-ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: "TypeScript", framework: "React" }), document.getElementById("example"));
+const PhotoBoard_1 = __webpack_require__(/*! ./components/PhotoBoard */ "./src/components/PhotoBoard.tsx");
+ReactDOM.render(React.createElement(PhotoBoard_1.PhotoBoard, { compiler: "TypeScript", framework: "React" }), document.getElementById("root"));
 
 
 /***/ }),
