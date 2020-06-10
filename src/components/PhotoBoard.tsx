@@ -12,7 +12,8 @@ import Modal from "./Modal";
 
 interface PhotoObject {
     path: string,
-    description: string
+    description: string,
+    showModal: Function
 }
 
 export const PhotoBoard = (props: { photoList: Array<PhotoObject> }) => {
@@ -38,7 +39,7 @@ export const PhotoBoard = (props: { photoList: Array<PhotoObject> }) => {
         <div className="board">
          {
              props.photoList.map( image => {
-                const metadata = {path: image, description: "none", showModal: updateModal}
+                const metadata = {path: image.path, description: image.description, showModal: updateModal}
                 return <PhotoCard metadata={metadata} />
              })
          }

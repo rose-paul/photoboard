@@ -140,7 +140,7 @@ exports.PhotoBoard = (props) => {
     return (React.createElement("div", { className: "wrapper" },
         modal,
         React.createElement("div", { className: "board" }, props.photoList.map(image => {
-            const metadata = { path: image, description: "none", showModal: updateModal };
+            const metadata = { path: image.path, description: image.description, showModal: updateModal };
             return React.createElement(PhotoCard_1.default, { metadata: metadata });
         }))));
 };
