@@ -188,9 +188,9 @@ const ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
 const PhotoBoard_1 = __webpack_require__(/*! ./components/PhotoBoard */ "./src/components/PhotoBoard.tsx");
 document.addEventListener('DOMContentLoaded', () => {
     const photoList = [
-        { path: "../photos/BumperCars.svg", description: "none" },
-        { path: "../photos/Chernobyl_Lenin.svg", description: "none" },
-        { path: "../photos/ChernobylRadar.svg", description: "none" },
+        { path: "../photos/BumperCars.svg", description: "Bumper Cars in Pripyat. Chernobyl Exclusion Zone." },
+        { path: "../photos/Chernobyl_Lenin.svg", description: "Lenin in the village Chernobyl. Chernobyl Exclusion Zone." },
+        { path: "../photos/ChernobylRadar.svg", description: "'Woodpecker Rader', in Chernobyl Exclusion Zone." },
         { path: "../photos/ChildrenWard.svg", description: "none" },
         { path: "../photos/Hospital_Gynecology.svg", description: "none" },
         { path: "../photos/Kiryak_Hide_cropped.svg", description: "none" },

@@ -11,9 +11,9 @@ interface PhotoObject {
 
 document.addEventListener('DOMContentLoaded', () => {
     const photoList : Array<PhotoObject> = [
-    { path: "../photos/BumperCars.svg", description: "none" },
-    { path: "../photos/Chernobyl_Lenin.svg", description: "none" },
-    { path: "../photos/ChernobylRadar.svg", description: "none" },
+    { path: "../photos/BumperCars.svg", description: "Bumper Cars in Pripyat. Chernobyl Exclusion Zone." },
+    { path: "../photos/Chernobyl_Lenin.svg", description: "Lenin in the village Chernobyl. Chernobyl Exclusion Zone." },
+    { path: "../photos/ChernobylRadar.svg", description: "'Woodpecker Rader', in Chernobyl Exclusion Zone." },
     { path: "../photos/ChildrenWard.svg", description: "none" },
     { path: "../photos/Hospital_Gynecology.svg", description: "none" },
     { path: "../photos/Kiryak_Hide_cropped.svg", description: "none" },
