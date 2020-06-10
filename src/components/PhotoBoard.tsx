@@ -10,7 +10,12 @@ import Modal from "./Modal";
 //     backgroundColor: "purple"
 // }
 
-export const PhotoBoard = (props: { photoList: Array<string> }) => {
+interface PhotoObject {
+    path: string,
+    description: string
+}
+
+export const PhotoBoard = (props: { photoList: Array<PhotoObject> }) => {
 
     const [modal, showModal] = React.useState(null);    
 

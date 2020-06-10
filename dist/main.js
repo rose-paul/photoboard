@@ -123,14 +123,6 @@ exports.PhotoBoard = void 0;
 const React = __webpack_require__(/*! react */ "react");
 const PhotoCard_1 = __webpack_require__(/*! ./PhotoCard */ "./src/components/PhotoCard.tsx");
 const Modal_1 = __webpack_require__(/*! ./Modal */ "./src/components/Modal.tsx");
-// var boardStyle = {
-//     display: "flex",
-//     flexWrap: "wrap",
-//     height: "inherit",
-//     width: 90 + "%",
-//     border: "1px solid red",
-//     backgroundColor: "purple"
-// }
 exports.PhotoBoard = (props) => {
     const [modal, showModal] = React.useState(null);
     function updateModal(path, description) {
@@ -196,22 +188,22 @@ const ReactDOM = __webpack_require__(/*! react-dom */ "react-dom");
 const PhotoBoard_1 = __webpack_require__(/*! ./components/PhotoBoard */ "./src/components/PhotoBoard.tsx");
 document.addEventListener('DOMContentLoaded', () => {
     const photoList = [
-        "../photos/BumperCars.svg",
-        "../photos/Chernobyl_Lenin.svg",
-        "../photos/ChernobylRadar.svg",
-        "../photos/ChildrenWard.svg",
-        "../photos/Hospital_Gynecology.svg",
-        "../photos/Kiryak_Hide_cropped.svg",
-        "../photos/Memorial911.svg",
-        "../photos/Milkovo_BusStop.svg",
-        "../photos/ParentsCorner.svg",
-        "../photos/Reindeer1_Tongue.svg",
-        "../photos/Riverdale_Subway.svg",
-        "../photos/Smoking.svg",
-        "../photos/SportComplex_Court.svg",
-        "../photos/SportComplex2.svg",
-        "../photos/SugarLoaf_TennisCourt.svg",
-        "../photos/BrooklynBrown.jpg"
+        { path: "../photos/BumperCars.svg", description: "none" },
+        { path: "../photos/Chernobyl_Lenin.svg", description: "none" },
+        { path: "../photos/ChernobylRadar.svg", description: "none" },
+        { path: "../photos/ChildrenWard.svg", description: "none" },
+        { path: "../photos/Hospital_Gynecology.svg", description: "none" },
+        { path: "../photos/Kiryak_Hide_cropped.svg", description: "none" },
+        { path: "../photos/Memorial911.svg", description: "none" },
+        { path: "../photos/Milkovo_BusStop.svg", description: "none" },
+        { path: "../photos/ParentsCorner.svg", description: "none" },
+        { path: "../photos/Reindeer1_Tongue.svg", description: "none" },
+        { path: "../photos/Riverdale_Subway.svg", description: "none" },
+        { path: "../photos/Smoking.svg", description: "none" },
+        { path: "../photos/SportComplex_Court.svg", description: "none" },
+        { path: "../photos/SportComplex2.svg", description: "none" },
+        { path: "../photos/SugarLoaf_TennisCourt.svg", description: "none" },
+        { path: "../photos/BrooklynBrown.jpg", description: "none" }
     ];
     ReactDOM.render(React.createElement(PhotoBoard_1.PhotoBoard, { photoList: photoList }), document.getElementById("root"));
 });
